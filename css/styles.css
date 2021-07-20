@@ -8,6 +8,8 @@
   --colot-negative: #ef485e;
 }
 
+/* text */
+
 html {
   font-size: 62.5%;
 }
@@ -25,4 +27,17 @@ body {
 h2 {
   font-size: 3rem;
   color: var(--color-heading);
+}
+
+/*list*/
+
+.list {
+  list-style: none;
+  padding-left: 0;
+  font-size: 18rem;
+}
+
+.list--inline .list__item {
+  display: inline-block;
+  margin-right: 0;
 }
