@@ -7,3 +7,22 @@
   --color-positive: #1aad6f;
   --colot-negative: #ef485e;
 }
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  color: var(--color-body);
+  font-size: 2.4rem;
+}
+
+:lang(th) {
+  font-family: "Prompt", sans-serif;
+}
+
+h2 {
+  font-size: 3rem;
+  color: var(--color-heading);
+}
