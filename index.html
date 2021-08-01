@@ -13,16 +13,292 @@
       rel="stylesheet"
     />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Prompt:wght@200;300;500;600;700&display=swap"
-      rel="stylesheet"
-    />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="css/normalize.css" />
     <link rel="stylesheet" href="css/styles.css" />
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.5.0/chart.min.js" integrity="sha512-asxKqQghC1oBShyhiBwA+YgotaSYKxGP1rcSYTDrB0U6DxwlJjU59B67U8+5/++uFjcuVM8Hh5cokLjZlhm3Vg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   </head>
 
-  <body></body>
+  <body>
+    <nav class="nav container">
+      <a class="nav__href-logo" href="/"
+        ><img class="nav__logo" src="images/logo-font.webp" alt=""
+      /></a>
+      <div class="nav__logo-clipping">
+        <img class="nav__logo-back rotation" src="images/logo-back.webp" alt=""/>
+      </div>
+      <ul class="list list--inline">
+        <li class="nav__logo-text" >GIGA FACTORY</li></a>
+        <a href="#want"><li lang="th" class="list__item">ราคารับซื้อ</li></a>
+        <a href="#sell"><li lang="th" class="list__item">ราคาขาย</li></a>
+        <a href="#price-calculation"><li lang="th" class="list__item">คำนวนราคา</li></a>
+        <a href="#contact"><li lang="th" class="list__item">ติดต่อ</li></a>
+        <span class="nav__update">
+          <p lang="th">อัปเดทราคาเมื่อ:</p>
+          <p id="updateTime"></p>
+        </span>
+      </ul>
+    </nav>
+    
+    
+    <div class="price-section price-section__container">
+      <ul class="list list--inline">
+        <li class="list__item">Bdash Motor <span id="bDashPriceChange">-</span></li>
+        <li class="list__item">Motor <span id="motorPriceChange">-</span></li>
+        <li class="list__item">Long Metal <span id="longMetalPriceChange">-</span></li>
+        <li class="list__item">Jet Part <span id="jetPartPriceChange">-</span></li>
+      </ul>
+    </div>
+    
+    <section class="hero size__container">
+      <div class="grid">
+        <div class=hero__content>
+          <h1 lang="th">รับซื้อ-ขายกีก้า</h1>
+          <h1 lang="th" class="hero__text">ราคาดีสุดในตลาด</h1>
+          <div class="line"></div>
+          <h2 lang="th">ราคาขายปัจจุบัน: <span id="gigaPrice">-</span> บาท</h2>
+          <h2 lang="th">จำนวนในสต็อก: <span id="gigaStock">-</span> เครื้อง</h2>
+          <a href="#price-calculation"><li lang="th" class="see-price-calculation price-calculation-btn">ดูการคำนวนราคา &rsaquo;</li></a>
+          <a href="#contact"><p lang="th" class="btn buy-btn">ซื้อเลย<p></a>
+        </div>
+        <img class="giga-cannon" src="images/gigaCannon-main.webp" alt="image of gigacannon"/>
+      </div>
+    </section >
+
+    <section id="want" class="want size__container">
+      <h3>Want /<span lang="th"> ต้องการซื้อ</span></h3>
+      <header lang="th" class="want__header grid-1x4" >
+        <h4>ชื่อ</h4>
+        <h4>ราคารับ / ชิ้น</h4>
+        <h4>เปลี่ยนเเปลง / ชิ้น</h4>
+        <h4>จำนวนที่รับ</h4>
+      </header>
+      <div id="wantBdash"  title="ON" class="grid-1x5 black-text">
+        <img class="resize--item" src="images/items-images/bDash-item.webp" alt="">
+        <h5>Bdash Motor</h5>
+        <h5 id="wantBdashPrice">-</h5>
+        <h5 id="wantBdashChange">-</h5>
+        <h5 id="wantBdashAmount">-</h5>
+      </div>
+      <div id="wantMotor"  title="ON" class="grid-1x5 black-text">
+        <img class="resize--item" src="images/items-images/motor-item.webp" alt="">
+        <h5>Motor</h5>
+        <h5 id="wantMotorPrice">-</h5>
+        <h5 id="wantMotorChange">-</h5>
+        <h5 id="wantMotorAmount">-</h5>
+      </div>
+      <div id="wantStamp"  title="ON" class="grid-1x5 black-text">
+        <img class="resize--item" src="images/items-images/stamp-item.webp " alt="">
+        <h5>Kaiser Stamp</h5>
+        <h5 id="wantStampPrice">-</h5>
+        <h5 id="wantStampChange">-</h5>
+        <h5 id="wantStampAmount">-</h5>
+      </div>
+      <div id="wantLongMetal"  title="ON" class="grid-1x5 black-text">
+        <img class="resize--item" src="images/items-images/longMetal-item.webp" alt="">
+        <h5>Long Metal</h5>
+        <h5 id="wantLongMetalPrice">-</h5>
+        <h5 id="wantLongMetalChange">-</h5>
+        <h5 id="wantLongMetalAmount">-</h5>
+      </div>
+      <div  id="wantJetPart" title="ON" class="grid-1x5 black-text">
+        <img class="resize--item" src="images/items-images/jetPart-item.webp" alt="">
+        <h5>Jet Part</h5>
+        <h5 id="wantJetPartPrice">-</h5>
+        <h5 id="wantJetPartChange">-</h5>
+        <h5 id="wantJetPartAmount">-</h5>
+      </div>
+      <div id="wantPhoton" title="ON" class="grid-1x5 black-text">
+        <img class="resize--item" src="images/items-images/photon-item.webp" alt="">
+        <h5>Photon Rail</h5>
+        <h5 id="wantPhotonPrice">-</h5>
+        <h5 id="wantPhotonChange">-</h5>
+        <h5 id="wantPhotonAmount">-</h5>
+      </div> 
+      <div id="wantBigJunk" title="ON" class="grid-1x5 black-text">
+        <img class="resize--item" src="images/items-images/bigJunk-item.webp  " alt="">
+        <h5>Big Junk</h5>
+        <h5 id="wantBigJunkPrice">-</h5> 
+        <h5 id="wantBigJunkChange">-</h5>
+        <h5 id="wantBigJunkAmount">-</h5>
+      </div>
+      <div id="wantHugeJunk" title="ON" class="grid-1x5 black-text">
+        <img class="resize--item" src="images/items-images/hugeJunk-item.webp  " alt="">
+        <h5>Huge Junk</h5>
+        <h5 id="wantHugeJunkPrice">-</h5> 
+        <h5 id="wantHugeJunkChange">-</h5>
+        <h5 id="wantHugeJunkAmount">-</h5>
+      </div>
+    </section>
+
+    <section id="sell" class="want size__container">
+      <h3>Sell  /<span lang="th">ต้องการขาย</span></h3>
+      <header lang="th" class="want__header grid-1x4" >
+        <h4>ชื่อ</h4>
+        <h4>ราคาขาย / ชิ้น</h4>
+        <h4>เปลี่ยนเเปลง / ชิ้น</h4>
+        <h4>จำนวนที่มี</h4>
+      </header>
+      <div id="sellGiga"  title="ON" class="grid-1x5 black-text">
+        <img class="resize--item" src="images/items-images/giga-item.webp" alt="">
+        <h5>Giga Motor</h5>
+        <h5 id="sellGigaPrice">-</h5>
+        <h5 id="sellGigaChange">-</h5>
+        <h5 id="sellGigaAmount">-</h5>
+      </div>
+      <div id="sellBarrelBot"  title="ON" class="grid-1x5 black-text">
+        <img class="resize--item" src="images/items-images/barrel-bot.webp " alt="">
+        <h5>S. Barrel Bot (n.)</h5>
+        <h5 id="sellBarrelBotPrice">-</h5>
+        <h5 id="sellBarrelBotChange">-</h5>
+        <h5 id="sellBarrelBotAmount">-</h5>
+      </div>
+      <div id="sellBdash"  title="ON" class="grid-1x5 black-text">
+        <img class="resize--item" src="images/items-images/bDash-item.webp" alt="">
+        <h5>Bdash Motor</h5>
+        <h5 id="sellBdashPrice">-</h5>
+        <h5 id="sellBdashChange">-</h5>
+        <h5 id="sellBdashAmount">-</h5>
+      </div>
+      <div id="sellStamp"  title="ON" class="grid-1x5 black-text">
+        <img class="resize--item" src="images/items-images/stamp-item.webp " alt="">
+        <h5>Kaiser Stamp</h5>
+        <h5 id="sellStampPrice">-</h5>
+        <h5 id="sellStampChange">-</h5>
+        <h5 id="sellStampAmount">-</h5>
+      </div>
+      
+    </section>
+
+    <section id="price-calculation" class="price-calculation size__container price-calculation-container">
+      <h3 class="price-calculation__head-text"><span lang="th"> คำนวนราคา</span></h3>
+      <p lang="th">ราคากีก้า = ราคารับซื้อส่วนผสมรวม + 70บาท</p>
+      <div class="grid">
+        <div>
+      <header lang="th" class="want__header grid-1x4-small" >
+        <h4>ชิ้นส่วน</h4>
+        <h4>ราคารับปัจจุบัน</h4>
+        <h4>จำนวนที่ใช้</h4>
+        <h4>ราคารวม</h4>
+      </header>
+      <div id="wantBdash" value="on" class="grid-1x4-small margin-down">
+        <img class="resize--item" src="images/items-images/bDash-item.webp" alt="">
+        <input class="number-input" id="inputBdashPrice" type="number"/>
+        <h5 class="amount-text"> 4 </h5>
+        <h5 id="outputBdashPrice">-</h5>
+      </div>
+      <div class="grid-1x4-small margin-down">
+        <img class="resize--item" src="images/items-images/motor-item.webp" alt="">
+        <input class="number-input" id="inputMotorPrice" type="number"/>
+        <h5 class="amount-text"> 4 </h5>
+        <h5 id="outputMotorPrice">-</h5>
+      </div>
+      <div class="grid-1x4-small margin-down">
+        <img class="resize--item" src="images/items-images/jetPart-item.webp" alt="">
+        <input class="number-input" id="inputJetPartPrice" type="number"/>
+        <h5 class="amount-text"> 4 </h5>
+        <h5 id="outputJetPartPrice">-</h5>
+      </div>
+      <div class="grid-1x4-small margin-down">
+        <img class="resize--item" src="images/items-images/photon-item.webp" alt="">
+        <input class="number-input" id="inputPhotonPrice" type="number"/>
+        <h5 class="amount-text"> 4 </h5>
+        <h5 id="outputPhotonPrice">-</h5>
+      </div>
+      <div class="grid-1x4-small margin-down">
+        <img class="resize--item" src="images/items-images/longMetal-item.webp" alt="">
+        <input class="number-input" id="inputLongMetalPrice" type="number"/>
+        <h5 class="amount-text"> 4 </h5>
+        <h5 id="outputLongMetalPrice">-</h5>
+      </div>
+      <div class="grid-1x4-small margin-down">
+        <img class="resize--item" src="images/items-images/stamp-item.webp" alt="">
+        <input class="number-input" id="inputStampPrice" type="number"/>
+        <h5 class="amount-text"> 12 </h5>
+        <h5 id="outputStampPrice">-</h5>
+      </div>
+      <div class="grid-1x4-small margin-down">
+        <img class="resize--item" src="images/items-images/bigJunk-item.webp" alt="">
+        <input class="number-input" id="inputBigJunkPrice" type="number"/>
+        <h5 class="amount-text"> 12 </h5>
+        <h5 id="outputBigJunkPrice">-</h5>
+      </div>
+      <div class="grid-1x4-small margin-down">
+        <img class="resize--item" src="images/items-images/hugeJunk-item.webp" alt="">
+        <input class="number-input" id="inputHugeJunkPrice" type="number"/>
+        <h5 class="amount-text"> 12 </h5>
+        <h5 id="outputHugeJunkPrice">-</h5>
+      </div>
+      <header lang="th" class="want__header grid-1x4-small">
+        <h4>ราคากีก้า: </h4>
+        <h4><sapn id="sumPrice2">-</sapn> + 70 <span> = </span><sapn id="sumGigaPrice">-</sapn></h4>
+        <h4>ราคาส่วนผสมรวม:</h4>
+        <h4 id="sumPrice" class="sum-price-text">-</h4>
+      </header>
+    </div>
+    <div lang="th" class="ingredient-chart">
+      <canvas id="ingredientPriceChart"></canvas>
+      <canvas class="comparison-chart" id="comparisonPriceChart"></canvas>
+    </div>
+    </div>
+    </section>
+
+    <section class="size__container chart-container">
+      <h4 lang="th">ประวัติราคาขายกีก้าเฉลี่ย (รายสัปดาห์)</h4>
+      <canvas class="historical-chart-height" id="historicalChart"></canvas>
+    </section>
+
+    <section id="contact" class="contact size__container">
+      <h3 class="contact__head" lang="th"> ติดต่อ ซื้อ-ขาย </h3>
+      <div class="contact__grid">
+        <div class="discord" title="ON">
+            <a href="https://discord.gg/sGp7Smx8mC" class="logo__container discord-animaton">
+              <img class="discord-logo-img" src="images/discord-logo.svg" alt="image of Discord's logo">
+            </a>
+          <div class="discord-massage "> 
+            <h3 class="logo--heading">Discord</h3>
+            <p lang="th">ทักมาได้ 24ชม.</p>
+            <p lang="th">เเต่อาจจะว่างตอบช่วง</p>
+            <p lang="th">19:00 - 21:00 นาฬิกาครับ</p>
+          </div>
+      </div>
+      <div class="Messenger discord">
+        <div class="logo__container blue">
+          <img class="discord-logo-img" src="images/facebook-logo.svg" alt="image of Discord's logo">
+        </div>
+        <div class="messenger-massage"> 
+          <h3 class="logo--heading">Massenger</h3>
+          <p lang="th">ยังไม่เปิดให้บริการทางนี้ครับ</p>
+          <p lang="th">ใช้ Discord ไปก่อนครับ</p>
+          <p lang="th">-----------</p>
+        </div>
+      </div>
+    </div>
+    </section>
+    
+    <section>
+      <div class="space"></div>
+    </section>
+
+    <section>
+      <div class="progress size-small-container progress-buttom-margin">
+        <img class="progress-img rotation" src="images/gear.svg" alt="">
+        <p class="progress-text"lang="th">ส่วนสำหรับการอัปเดทเพิ่มเติม...</p>
+      </div>
+    </section>
+
+
+    <footer class="footer">
+      <div class="footer-content">
+        <img class="logo-white" src="images/logo-white.svg" alt="">
+        <h3><span class="footer-highlight">Giga Factory</span> - The best market place for Giga Cannon and it's components.</h3>
+      </div>
+    </footer>
+    <script src="javascript/input.js"></script>
+  </body>
 </html>
+
