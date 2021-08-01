@@ -85,7 +85,7 @@ p {
 .list--inline .list__item {
   display: inline-block;
   margin-right: 3rem;
-  padding: 5px 5px;
+  padding: 2px 2px;
 }
 
 /* nav */
@@ -185,8 +185,8 @@ p {
 }
 
 .price-section .list__item {
-  margin-left: 5rem;
-  margin-right: 5rem;
+  margin-left: 7rem;
+  margin-right: 1rem;
 }
 
 /* grids */

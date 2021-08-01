@@ -84,22 +84,46 @@ function declarePercentChange(sting, varName) {
   else document.getElementById(sting).style.color = "#ef485e";
 }
 
+//Typing animation fuction
+let i = 0;
+let text = "Lorem ipsum typing effect!"; /* The text */
+let speed = 50; /* The speed/duration of the effect in milliseconds */
+
+function typeWriter() {
+  if (i < text.length) {
+    document.getElementById("demo").innerHTML += txt.charAt(i);
+    i++;
+    setTimeout(typeWriter, speed);
+  }
+}
+
+//Display price function
+function displayPriceChange(slotNo, itemNo, itemName, percentageChange) {
+  document.getElementById(slotNo).innerHTML = formatPlusSign(
+    percentageChange.toFixed(2)
+  );
+  if (formatPlusSign(percentageChange.toFixed(2)).search("-") == "-1")
+    document.getElementById(slotNo).style.color = "#1aad6f";
+  else document.getElementById(slotNo).style.color = "#ef485e";
+  document.getElementById(itemNo).innerHTML = itemName;
+}
+
 //Giga Price
 document.getElementById("gigaPrice").innerHTML = gigaPrice;
 document.getElementById("gigaStock").innerHTML = gigaStock;
 
 //Price Tag Section
 bDashPriceChange = FindPercentChange(wantBdash, oldWantBdash);
-declarePercentChange("bDashPriceChange", bDashPriceChange);
+displayPriceChange("slot1", "item1", "Bdash Motor", bDashPriceChange);
 
 motorPriceChange = FindPercentChange(wantMotor, oldWantMotor);
-declarePercentChange("motorPriceChange", motorPriceChange);
+displayPriceChange("slot2", "item2", "Motor", motorPriceChange);
 
 longMetalPriceChange = FindPercentChange(wantLongMetal, oldWantLongMetal);
-declarePercentChange("longMetalPriceChange", longMetalPriceChange);
+displayPriceChange("slot3", "item3", "Long Metal", longMetalPriceChange);
 
 jetPartPriceChange = FindPercentChange(wantJetPart, oldWantJetPart);
-declarePercentChange("jetPartPriceChange", jetPartPriceChange);
+displayPriceChange("slot4", "item4", "Jet Part", jetPartPriceChange);
 
 stampPriceChange = FindPercentChange(wantStamp, oldWantStamp);
 
