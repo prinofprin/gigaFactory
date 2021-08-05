@@ -63,14 +63,14 @@ let gigaPrice =
   wantPhoton * 4 +
   wantBigJunk * 12 +
   wantHugeJunk * 12 +
-  70;
+  50;
 
 sellGiga = gigaPrice;
 
 document.getElementById("updateTime").innerHTML = updateTime;
 
 function FindPercentChange(newPrice, oldPrice) {
-  return ((newPrice - oldPrice) / oldPrice) * 70;
+  return ((newPrice - oldPrice) / oldPrice) * 50;
 }
 
 function formatPlusSign(n) {
@@ -82,19 +82,6 @@ function declarePercentChange(sting, varName) {
   if (formatPlusSign(varName.toFixed(2)).search("-") == "-1")
     document.getElementById(sting).style.color = "#1aad6f";
   else document.getElementById(sting).style.color = "#ef485e";
-}
-
-//Typing animation fuction
-let i = 0;
-let text = "Lorem ipsum typing effect!"; /* The text */
-let speed = 50; /* The speed/duration of the effect in milliseconds */
-
-function typeWriter() {
-  if (i < text.length) {
-    document.getElementById("demo").innerHTML += txt.charAt(i);
-    i++;
-    setTimeout(typeWriter, speed);
-  }
 }
 
 //Display price function
@@ -117,7 +104,7 @@ bDashPriceChange = FindPercentChange(wantBdash, oldWantBdash);
 displayPriceChange("slot1", "item1", "Bdash Motor", bDashPriceChange);
 
 motorPriceChange = FindPercentChange(wantMotor, oldWantMotor);
-displayPriceChange("slot2", "item2", "Motor", motorPriceChange);
+//displayPriceChange("slot2", "item2", "Motor", motorPriceChange);
 
 longMetalPriceChange = FindPercentChange(wantLongMetal, oldWantLongMetal);
 displayPriceChange("slot3", "item3", "Long Metal", longMetalPriceChange);
@@ -126,20 +113,113 @@ jetPartPriceChange = FindPercentChange(wantJetPart, oldWantJetPart);
 displayPriceChange("slot4", "item4", "Jet Part", jetPartPriceChange);
 
 stampPriceChange = FindPercentChange(wantStamp, oldWantStamp);
+//displayPriceChange("slot5", "item5", "Kaiser Stamp", stampPriceChange);
 
 photonPriceChange = FindPercentChange(wantPhoton, oldWantPhoton);
+//displayPriceChange("slot6", "item6", "Photon Rail", photonPriceChange);
 
 bigJunkPriceChange = FindPercentChange(wantBigJunk, oldWantBigJunk);
+displayPriceChange("slot7", "item7", "Big Junk", bigJunkPriceChange);
 
 HugeJunkPriceChange = FindPercentChange(wantHugeJunk, oldWantHugeJunk);
+//displayPriceChange("slot8", "item8", "Huge Junk", HugeJunkPriceChange);
 
 gigaPriceChange = FindPercentChange(sellGiga, oldSellGiga);
+//displayPriceChange("slot9", "item9", "Sell-Giga", gigaPriceChange);
 
 sellBdashPriceChange = FindPercentChange(sellBdash, oldSellBdash);
+//displayPriceChange("slot10", "item10", "Sell-Bdash", sellBdashPriceChange);
 
 sellStampPriceChange = FindPercentChange(sellStamp, oldSellStamp);
+//displayPriceChange(
+//"slot11",
+//"item11",
+//"Sell-KaiserStamp",
+//sellStampPriceChange
+//);
 
 sellBarrelBotPriceChange = FindPercentChange(sellBarrelBot, oldSellBarrelBot);
+//displayPriceChange(
+//"slot12",
+//"item12",
+//"Sell-Barrel Bot",
+//sellBarrelBotPriceChange
+//);
+
+//Price Tag Animation
+
+function typingDisplayitem(itemNo, itemName, delay) {
+  var app = document.getElementById(itemNo);
+
+  var typewriter = new Typewriter(app, {
+    loop: false,
+    cursor: "",
+    delay: Math.floor(Math.random() * 100) + 50,
+  });
+
+  typewriter.pauseFor(delay).typeString(itemName).pauseFor(1000).start();
+}
+
+displayPriceChange("slot5", "item5", "Kaiser Stamp", stampPriceChange);
+typingDisplayitem("item5", "Kaiser Stamp", 500);
+
+displayPriceChange("slot6", "item6", "Photon Rail", photonPriceChange);
+typingDisplayitem("item6", "Photon Rail", 0);
+
+displayPriceChange("slot8", "item8", "Huge Junk", HugeJunkPriceChange);
+typingDisplayitem("item8", "Huge Junk", 1400);
+
+displayPriceChange("slot2", "item2", "Motor", motorPriceChange);
+typingDisplayitem("item2", "Motor", 300);
+
+// Typing animation for hero display
+function typingAnimationWant() {
+  let app = document.getElementById("typing-want");
+
+  let typewriter = new Typewriter(app, {
+    loop: true,
+    delay: 68,
+  });
+  let pause = 1500;
+
+  typewriter
+    .typeString("Bdash")
+    .typeString("\xa0\xa0" + wantBdash.toString() + "\xa0" + "บาท")
+    .pauseFor(pause)
+    .deleteAll()
+    .typeString("Motor")
+    .typeString("\xa0\xa0" + wantMotor.toString() + "\xa0" + "บาท")
+    .pauseFor(pause)
+    .deleteAll()
+    .typeString("Long Metal")
+    .typeString("\xa0\xa0" + wantLongMetal.toString() + "\xa0" + "บาท")
+    .pauseFor(pause)
+    .deleteAll()
+    .typeString("Jet Part")
+    .typeString("\xa0\xa0" + wantJetPart.toString() + "\xa0" + "บาท")
+    .pauseFor(pause)
+    .deleteAll()
+    .typeString("Kaiser Stamp")
+    .typeString("\xa0\xa0" + wantStamp.toString() + "\xa0" + "บาท")
+    .pauseFor(pause)
+    .deleteAll()
+    .typeString("Photon Rail")
+    .typeString("\xa0\xa0" + wantPhoton.toString() + "\xa0" + "บาท")
+    .pauseFor(pause)
+    .deleteAll()
+    .typeString("Huge Junk")
+    .typeString("\xa0\xa0" + wantHugeJunk.toString() + "\xa0" + "บาท")
+    .pauseFor(pause)
+    .deleteAll()
+    .typeString("Big Junk")
+    .typeString("\xa0\xa0" + wantBigJunk.toString() + "\xa0" + "บาท")
+    .pauseFor(pause)
+    .deleteAll()
+
+    .start();
+}
+
+typingAnimationWant();
 
 // Want & Sell Price Section
 function declareWantAmount(idName, varName) {
@@ -538,7 +618,7 @@ function summingPrice() {
     document.getElementById("inputHugeJunkPrice").value * 12;
   document.getElementById("sumPrice").innerHTML = sumPrice;
   document.getElementById("sumPrice2").innerHTML = sumPrice;
-  document.getElementById("sumGigaPrice").innerHTML = sumPrice + 70;
+  document.getElementById("sumGigaPrice").innerHTML = sumPrice + 50;
 }
 
 function intialPriceCalculation(inputID, outputID, price, amount) {
@@ -582,7 +662,7 @@ function customPriceCalculation(inputID, outputID, amount) {
     {
       data: [
         marketPrice,
-        document.getElementById("gigaPrice").innerHTML,
+        document.getElementById("sellGigaPrice").innerHTML,
         document.getElementById("sumPrice").innerHTML,
       ],
       backgroundColor: ["#2f4b7c", "#665191", "#ffa600"],
@@ -699,14 +779,14 @@ let myChart = new Chart(ctx, {
           document.getElementById("outputHugeJunkPrice").innerHTML,
         ],
         backgroundColor: [
-          "#003f5c",
-          "#2f4b7c",
-          "#665191",
-          "#a05195",
-          "#d45087",
-          "#f95d6a",
-          "#ff7c43",
-          "#ffa600",
+          "#ffaa1f",
+          "#f39521",
+          "#e58023",
+          "#d56c25",
+          "#c45a26",
+          "#b34826",
+          "#a03724",
+          "#8c2622",
         ],
         borderWidth: 2,
       },
@@ -738,7 +818,7 @@ let comperisonChart = new Chart(comperisonCtx, {
           document.getElementById("gigaPrice").innerHTML,
           document.getElementById("sumPrice").innerHTML,
         ],
-        backgroundColor: ["#2f4b7c", "#665191", "#ffa600"],
+        backgroundColor: ["#8c2622", "#cd6326", "#ffaa1f"],
         borderWidth: 2,
       },
     ],
@@ -775,6 +855,7 @@ let historicalChart = new Chart(historicalCtx, {
       "W3 (กิจกรรมหาสมบัติมีสุ่มได้ Bdash)",
       "W4 (กิจกรรมหาสมบัติมีสุ่มได้ Bdash)",
       "W5",
+      "w6",
     ],
     datasets: [
       {
@@ -784,13 +865,15 @@ let historicalChart = new Chart(historicalCtx, {
           640,
           550,
           480,
+          400,
           document.getElementById("gigaPrice").innerHTML,
         ],
         backgroundColor: [
           "#17191f",
+          "#ef485e",
           "#17191f",
-          "#17191f",
-          "#17191f",
+          "#ef485e",
+          "#ef485e",
           "#17191f",
           "#d8901a",
         ],
@@ -838,4 +921,35 @@ let historicalChart = new Chart(historicalCtx, {
       },
     },
   },
+});
+
+//Background
+VANTA.DOTS({
+  el: "#background",
+  mouseControls: true,
+  touchControls: true,
+  gyroControls: false,
+  minHeight: 200.0,
+  minWidth: 200.0,
+  scale: 1.0,
+  scaleMobile: 1.0,
+  color2: 0xffffff,
+  backgroundColor: 0xffffff,
+  size: 4.0,
+  spacing: 80.0,
+});
+
+VANTA.NET({
+  el: "#lower-bg",
+  mouseControls: true,
+  touchControls: true,
+  gyroControls: false,
+  minHeight: 200.0,
+  minWidth: 200.0,
+  scale: 1.0,
+  scaleMobile: 1.0,
+  color: 0xfea80c,
+  points: 9.0,
+  spacing: 20.0,
+  backgroundColor: 0xffffff,
 });

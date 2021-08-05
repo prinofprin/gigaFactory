@@ -20,8 +20,17 @@
     <link rel="stylesheet" href="css/normalize.css" />
     <link rel="stylesheet" href="css/styles.css" />
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.dots.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.net.min.js"></script>
+
+
+    <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.5.0/chart.min.js" integrity="sha512-asxKqQghC1oBShyhiBwA+YgotaSYKxGP1rcSYTDrB0U6DxwlJjU59B67U8+5/++uFjcuVM8Hh5cokLjZlhm3Vg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   </head>
+
+
 
   <body>
     <nav class="nav container">
@@ -32,10 +41,15 @@
         <img class="nav__logo-back rotation" src="images/logo-back.webp" alt=""/>
       </div>
       <ul class="list list--inline">
+      <a class="nav__href-logo" href="/">
         <li class="nav__logo-text" >GIGA FACTORY</li></a>
+      </a>
+      <li lang="th" id="gigaDamageList" class="list__item hover-point">คำนวนดาเมจกีก้า</li>
+      <a href="#price-calculation"><li lang="th" class="list__item">คำนวนราคา</li></a>
         <a href="#want"><li lang="th" class="list__item">ราคารับซื้อ</li></a>
         <a href="#sell"><li lang="th" class="list__item">ราคาขาย</li></a>
-        <a href="#price-calculation"><li lang="th" class="list__item">คำนวนราคา</li></a>
+        
+        
         <a href="#contact"><li lang="th" class="list__item">ติดต่อ</li></a>
         <span class="nav__update">
           <p lang="th">อัปเดทราคาเมื่อ:</p>
@@ -46,28 +60,43 @@
     
     
     <div class="price-section price-section__container">
-      <ul class="list list--inline">
-        <li class="list__item" id="item1">-</li><span id="slot1">-</span>
-        <li class="list__item" id="item2">-</li><span id="slot2">-</span>
-        <li class="list__item" id="item3">-</li><span id="slot3">-</span>
-        <li class="list__item" id="item4">-</li><span id="slot4">-</span>
+      <a href="#want">
+      <ul class="list list--inline ">
+        <li class="list__item " id="item1"></li><span class="" id="slot1"></span>
+        <li class="list__item text-appear-animation" id="item2"></li><span class="appear-animation" id="slot2"></span>
+        <li class="list__item " id="item3"></li><span class="" id="slot3"></span>
+        <li class="list__item " id="item4"></li><span class="" id="slot4"></span>
+        <li class="list__item text-appear-animation " id="item5"></li><span class="appear-animation" id="slot5"></span>
+        <li class="list__item text-appear-animation" id="item6"></li><span class="appear-animation" id="slot6"></span>
+        <li class="list__item " id="item7"></li><span class="" id="slot7"></span>
+        <li class="list__item text-appear-animation" id="item8"></li><span class="appear-animation" id="slot8"></span>
+        <!-- <li class="list__item animation-3" id="item9"></li><span class="animation-3-1" id="slot9"></span>
+        <li class="list__item animation-3" id="item10"></li><span class="animation-3-1" id="slot10"></span>
+        <li class="list__item animation-3" id="item11"></li><span class="animation-3-1" id="slot11"></span>
+        <li class="list__item animation-3" id="item12"></li><span class="animation-3-1" id="slot12"></span> -->
       </ul>
+      </a>
     </div>
-    
-    <section class="hero size__container">
-      <div class="grid">
-        <div class=hero__content>
-          <h1 lang="th">รับซื้อ-ขายกีก้า</h1>
-          <h1 lang="th" class="hero__text">ราคาดีสุดในตลาด</h1>
-          <div class="line"></div>
-          <h2 lang="th">ราคาขายปัจจุบัน: <span id="gigaPrice">-</span> บาท</h2>
-          <h2 lang="th">จำนวนในสต็อก: <span id="gigaStock">-</span> เครื้อง</h2>
-          <a href="#price-calculation"><li lang="th" class="see-price-calculation price-calculation-btn">ดูการคำนวนราคา &rsaquo;</li></a>
-          <a href="#contact"><p lang="th" class="btn buy-btn">ซื้อเลย<p></a>
+
+    <section id="background">
+      <section class=" hero size__container">
+        <div id="heroGrid" class="grid">
+          <div id="heroRemove" class=hero__content>
+            <h1 lang="th">รับซื้อ-ขายกีก้า</h1>
+            <h1 lang="th" class="hero__text" id="bestPrice">ราคาดีที่สุดในตลาด</h1>
+            <div class="line"></div>
+            <h2 lang="th">ราคาขายกีก้าปัจจุบัน: <span id="gigaPrice">-</span> บาท</h2>
+            <h2 lang="th">จำนวนในสต็อก: <span id="gigaStock">-</span> เครื้อง</h2>
+            <a href="#want"><h4 class="hero-want" lang="th">ประกาศรับ: <span id="typing-want">-</span></h4></a>
+            <a href="#price-calculation"><li lang="th" class="see-price-calculation price-calculation-btn">ดูการคำนวนราคา &rsaquo;</li></a>
+            <a href="#contact"><p lang="th" class="btn buy-btn">ซื้อเลย<p></a>
+          </div>
+          <img id="heroRemove2" class="giga-cannon" src="images/gigaCannon-main.webp" alt="image of gigacannon"/>
         </div>
-        <img class="giga-cannon" src="images/gigaCannon-main.webp" alt="image of gigacannon"/>
-      </div>
-    </section >
+      </section >
+      <section>
+      </section>
+    </section>      
 
     <section id="want" class="want size__container">
       <h3>Want /<span lang="th"> ต้องการซื้อ</span></h3>
@@ -176,7 +205,7 @@
 
     <section id="price-calculation" class="price-calculation size__container price-calculation-container">
       <h3 class="price-calculation__head-text"><span lang="th"> คำนวนราคา</span></h3>
-      <p lang="th">ราคากีก้า = ราคารับซื้อส่วนผสมรวม + 70บาท</p>
+      <p lang="th">ราคากีก้า = ราคารับซื้อส่วนผสมรวม + 50บาท</p>
       <div class="grid">
         <div>
       <header lang="th" class="want__header grid-1x4-small" >
@@ -235,7 +264,7 @@
       </div>
       <header lang="th" class="want__header grid-1x4-small">
         <h4>ราคากีก้า: </h4>
-        <h4><sapn id="sumPrice2">-</sapn> + 70 <span> = </span><sapn id="sumGigaPrice">-</sapn></h4>
+        <h4><sapn id="sumPrice2">-</sapn> + 50 <span> = </span><sapn id="sumGigaPrice">-</sapn></h4>
         <h4>ราคาส่วนผสมรวม:</h4>
         <h4 id="sumPrice" class="sum-price-text">-</h4>
       </header>
@@ -275,22 +304,29 @@
           <p lang="th">ยังไม่เปิดให้บริการทางนี้ครับ</p>
           <p lang="th">ใช้ Discord ไปก่อนครับ</p>
           <p lang="th">-----------</p>
+          
         </div>
       </div>
     </div>
     </section>
+
+    <section>
+      <div class="space-small"></div>
+    </section>
+
     
+    <section id="lower-bg">
     <section>
       <div class="space"></div>
     </section>
 
-    <section>
-      <div class="progress size-small-container progress-buttom-margin">
+    <section class="progress-section">
+      <div class="progress size-small-container">
         <img class="progress-img rotation" src="images/gear.svg" alt="">
         <p class="progress-text"lang="th">ส่วนสำหรับการอัปเดทเพิ่มเติม...</p>
       </div>
     </section>
-
+  </section>
 
     <footer class="footer">
       <div class="footer-content">
@@ -299,6 +335,7 @@
       </div>
     </footer>
     <script src="javascript/input.js"></script>
+    <script src="javascript/hero-manipulation.js"></script>
   </body>
 </html>
 
