@@ -51,7 +51,7 @@ let wantHugeJunkAmount = 46;
 // Sell Quantity
 let sellGigaAmount = 2;
 let sellBdashAmount = 8;
-let sellStampAmount = 11;
+let sellStampAmount = 27;
 let sellBarrelBotAmount = 3;
 
 let gigaPrice =
@@ -665,7 +665,7 @@ function customPriceCalculation(inputID, outputID, amount) {
         document.getElementById("sellGigaPrice").innerHTML,
         document.getElementById("sumPrice").innerHTML,
       ],
-      backgroundColor: ["#2f4b7c", "#665191", "#ffa600"],
+      backgroundColor: ["#8c2622", "#cd6326", "#ffaa1f"],
       borderWidth: 2,
     },
   ];

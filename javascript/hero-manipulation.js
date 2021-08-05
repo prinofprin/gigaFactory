@@ -220,7 +220,7 @@ function netDamageCalculation(damage, def) {
   else if (def <= 64) return damage - damage * ((def * 0.515) / 100);
   else if (def <= 128) return damage - damage * ((def * 0.39) / 100);
   else if (def <= 256) return damage - damage * ((def * 0.261) / 100);
-  else if (def <= 600) return damage - damage * ((def * 0.156) / 100);
+  else if (def <= 1000) return damage - damage * ((def * 0.156) / 100);
   //512
   else return NaN;
 }
@@ -299,7 +299,14 @@ function updateDamageChart() {
         megaHammerDmgResult,
         megaPunchDmgResult,
       ],
-      backgroundColor: ["#2f4b7c", "#665191", "#ffa600"],
+      backgroundColor: [
+        "#ffaa1f",
+        "#ed8c22",
+        "#d87025",
+        "#c15626",
+        "#a73d25",
+        "#8c2622",
+      ],
       borderWidth: 2,
     },
   ];
