@@ -72,6 +72,7 @@ function changeHeroSection() {
   heroRightTopContainer.classList.add("hero-right-top-container");
   heroRightTopContainer.classList.add("container--border");
   heroRightTopContainer.setAttribute("id", "heroRightTopContainer");
+  heroRightTopContainer.setAttribute("data-aos", "flip-right");
   document
     .getElementById("heroRightContainer")
     .appendChild(heroRightTopContainer);
@@ -152,6 +153,8 @@ function changeHeroSection() {
   heroRightMiddleContainer.classList.add("container--border");
   heroRightMiddleContainer.classList.add("hero-right-middle-container");
   heroRightMiddleContainer.setAttribute("id", "heroRightMiddleContainer");
+  heroRightMiddleContainer.setAttribute("data-aos", "flip-right");
+  heroRightMiddleContainer.setAttribute("data-aos-delay", "200");
   document
     .getElementById("heroRightContainer")
     .appendChild(heroRightMiddleContainer);

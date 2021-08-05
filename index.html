@@ -25,6 +25,7 @@
 
     <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.net.min.js"></script>
 
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
     <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.5.0/chart.min.js" integrity="sha512-asxKqQghC1oBShyhiBwA+YgotaSYKxGP1rcSYTDrB0U6DxwlJjU59B67U8+5/++uFjcuVM8Hh5cokLjZlhm3Vg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -270,32 +271,32 @@
       </header>
     </div>
     <div lang="th" class="ingredient-chart">
-      <canvas id="ingredientPriceChart"></canvas>
-      <canvas class="comparison-chart" id="comparisonPriceChart"></canvas>
+      <canvas  data-aos="flip-left" id="ingredientPriceChart"></canvas>
+      <canvas data-aos="flip-down" class="comparison-chart" id="comparisonPriceChart"></canvas>
     </div>
     </div>
     </section>
 
     <section class="size__container chart-container">
       <h4 lang="th">ประวัติราคาขายกีก้าเฉลี่ย (รายสัปดาห์)</h4>
-      <canvas class="historical-chart-height" id="historicalChart"></canvas>
+      <canvas  data-aos="flip-up" class="historical-chart-height" id="historicalChart"></canvas>
     </section>
 
     <section id="contact" class="contact size__container">
       <h3 class="contact__head" lang="th"> ติดต่อ ซื้อ-ขาย </h3>
-      <div class="contact__grid">
-        <div class="discord" title="ON">
+      <div  class="contact__grid">
+        <div data-aos="fade-right" class="discord" title="ON">
             <a href="https://discord.gg/sGp7Smx8mC" class="logo__container discord-animaton">
               <img class="discord-logo-img" src="images/discord-logo.svg" alt="image of Discord's logo">
             </a>
-          <div class="discord-massage "> 
+          <div  class="discord-massage "> 
             <h3 class="logo--heading">Discord</h3>
             <p lang="th">ทักมาได้ 24ชม.</p>
             <p lang="th">เเต่อาจจะว่างตอบช่วง</p>
             <p lang="th">19:00 - 21:00 นาฬิกาครับ</p>
           </div>
       </div>
-      <div class="Messenger discord">
+      <div data-aos="fade-left" class="Messenger discord">
         <div class="logo__container blue">
           <img class="discord-logo-img" src="images/facebook-logo.svg" alt="image of Discord's logo">
         </div>
@@ -336,6 +337,10 @@
     </footer>
     <script src="javascript/input.js"></script>
     <script src="javascript/hero-manipulation.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
   </body>
 </html>
 
