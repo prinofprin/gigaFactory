@@ -51,7 +51,7 @@ let wantHugeJunkAmount = 46;
 // Sell Quantity
 let sellGigaAmount = 2;
 let sellBdashAmount = 8;
-let sellStampAmount = 27;
+let sellStampAmount = 22;
 let sellBarrelBotAmount = 3;
 
 let gigaPrice =
