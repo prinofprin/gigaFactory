@@ -1,5 +1,5 @@
 const Hey = "Do not peek!";
-let updateTime = "21/7/21 10:40";
+let updateTime = "6/8/21 5:44";
 //Market price
 let marketPrice = 400;
 
