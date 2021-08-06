@@ -1,5 +1,5 @@
 const Hey = "Do not peek!";
-let updateTime = "6/8/21 5:44";
+let updateTime = "6/8/21 9:53";
 //Market price
 let marketPrice = 400;
 
@@ -7,7 +7,7 @@ let marketPrice = 400;
 let wantBdash = 15;
 let wantMotor = 1;
 let wantStamp = 5;
-let wantJetPart = 7;
+let wantJetPart = 6;
 let wantLongMetal = 6;
 let wantPhoton = 1;
 let wantBigJunk = 1;
@@ -23,7 +23,7 @@ let sellStamp = 8;
 let oldWantBdash = 25;
 let oldWantMotor = 1;
 let oldWantStamp = 7;
-let oldWantJetPart = 4;
+let oldWantJetPart = 7;
 let oldWantLongMetal = 7;
 let oldWantPhoton = 1;
 let oldWantBigJunk = 2;
@@ -46,7 +46,7 @@ let wantJetPartAmount = 9;
 let wantLongMetalAmount = 24;
 let wantPhotonAmount = 5;
 let wantBigJunkAmount = 36;
-let wantHugeJunkAmount = 46;
+let wantHugeJunkAmount = 32;
 
 // Sell Quantity
 let sellGigaAmount = 2;
