@@ -1,5 +1,5 @@
 const Hey = "Do not peek!";
-let updateTime = "7/8/21 11:53";
+let updateTime = "7/8/21 15:15";
 //Market price
 let marketPrice = 400;
 
@@ -63,14 +63,14 @@ let gigaPrice =
   wantPhoton * 4 +
   wantBigJunk * 12 +
   wantHugeJunk * 12 +
-  60;
+  70;
 
 sellGiga = gigaPrice;
 
 document.getElementById("updateTime").innerHTML = updateTime;
 
 function FindPercentChange(newPrice, oldPrice) {
-  return ((newPrice - oldPrice) / oldPrice) * 60;
+  return ((newPrice - oldPrice) / oldPrice) * 100;
 }
 
 function formatPlusSign(n) {
@@ -618,7 +618,7 @@ function summingPrice() {
     document.getElementById("inputHugeJunkPrice").value * 12;
   document.getElementById("sumPrice").innerHTML = sumPrice;
   document.getElementById("sumPrice2").innerHTML = sumPrice;
-  document.getElementById("sumGigaPrice").innerHTML = sumPrice + 60;
+  document.getElementById("sumGigaPrice").innerHTML = sumPrice + 70;
 }
 
 function intialPriceCalculation(inputID, outputID, price, amount) {
