@@ -36,7 +36,7 @@ let oldSellStamp = 10;
 let oldSellBarrelBot = 45;
 
 // Stock
-let gigaStock = 2;
+let gigaStock = 1;
 
 // Want Quantity
 let wantBdashAmount = 6;
