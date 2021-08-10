@@ -4,7 +4,7 @@ let updateTime = "8/8/21 18:52";
 let marketPrice = 400;
 
 //New wanted price
-let wantBdash = 15;
+let wantBdash = 12;
 let wantMotor = 1;
 let wantStamp = 5;
 let wantJetPart = 5;
@@ -39,14 +39,14 @@ let oldSellBarrelBot = 45;
 let gigaStock = 1;
 
 // Want Quantity
-let wantBdashAmount = 6;
+let wantBdashAmount = 4;
 let wantMotorAmount = 0;
 let wantStampAmount = 0;
 let wantJetPartAmount = 5;
-let wantLongMetalAmount = 24;
+let wantLongMetalAmount = 7;
 let wantPhotonAmount = 5;
-let wantBigJunkAmount = 36;
-let wantHugeJunkAmount = 32;
+let wantBigJunkAmount = 12;
+let wantHugeJunkAmount = 16;
 
 // Sell Quantity
 let sellGigaAmount = 2;
@@ -856,6 +856,7 @@ let historicalChart = new Chart(historicalCtx, {
       "W4 (กิจกรรมหาสมบัติมีสุ่มได้ Bdash)",
       "W5",
       "w6",
+      "w7",
     ],
     datasets: [
       {
@@ -866,6 +867,7 @@ let historicalChart = new Chart(historicalCtx, {
           550,
           480,
           400,
+          320,
           document.getElementById("gigaPrice").innerHTML,
         ],
         backgroundColor: [
@@ -874,6 +876,7 @@ let historicalChart = new Chart(historicalCtx, {
           "#17191f",
           "#ef485e",
           "#ef485e",
+          "#17191f",
           "#17191f",
           "#d8901a",
         ],
