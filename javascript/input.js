@@ -1,10 +1,10 @@
 const Hey = "Do not peek!";
-let updateTime = "8/8/21 18:52";
+let updateTime = "10/8/21 17:45";
 //Market price
 let marketPrice = 400;
 
 //New wanted price
-let wantBdash = 12;
+let wantBdash = 14;
 let wantMotor = 1;
 let wantStamp = 5;
 let wantJetPart = 5;
