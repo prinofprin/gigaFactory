@@ -857,6 +857,7 @@ let historicalChart = new Chart(historicalCtx, {
       "W5",
       "w6",
       "w7",
+      "w8",
     ],
     datasets: [
       {
