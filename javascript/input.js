@@ -1,7 +1,7 @@
 const Hey = "Do not peek!";
 let updateTime = "10/8/21 17:45";
 //Market price
-let marketPrice = 350;
+let marketPrice = 300;
 
 //New wanted price
 let wantBdash = 14;
@@ -63,7 +63,7 @@ let gigaPrice =
   wantPhoton * 4 +
   wantBigJunk * 12 +
   wantHugeJunk * 12 +
-  70;
+  50;
 
 sellGiga = gigaPrice;
 
@@ -618,7 +618,7 @@ function summingPrice() {
     document.getElementById("inputHugeJunkPrice").value * 12;
   document.getElementById("sumPrice").innerHTML = sumPrice;
   document.getElementById("sumPrice2").innerHTML = sumPrice;
-  document.getElementById("sumGigaPrice").innerHTML = sumPrice + 70;
+  document.getElementById("sumGigaPrice").innerHTML = sumPrice + 50;
 }
 
 function intialPriceCalculation(inputID, outputID, price, amount) {
@@ -868,6 +868,7 @@ let historicalChart = new Chart(historicalCtx, {
           480,
           400,
           320,
+          300,
           document.getElementById("gigaPrice").innerHTML,
         ],
         backgroundColor: [
@@ -876,6 +877,7 @@ let historicalChart = new Chart(historicalCtx, {
           "#17191f",
           "#ef485e",
           "#ef485e",
+          "#17191f",
           "#17191f",
           "#17191f",
           "#d8901a",
